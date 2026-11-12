@@ -3,6 +3,7 @@
    ========================================================================== */
 
 import * as st from './estado.js';
+import * as nuvem from './nuvem.js';
 import { STATUS_PROJETO } from './dados-iniciais.js';
 import { $ } from './utils.js';
 import { atualizarFicha } from './ficha.js';
@@ -137,3 +138,7 @@ window.addEventListener('hashchange', () => {
 st.assinar(() => desenharTudo());
 
 desenharTudo();
+
+/* Nuvem: sincroniza com o Supabase quando config-nuvem.js estiver preenchido. */
+st.ligarNuvem(nuvem.agendarEnvio);
+nuvem.iniciar({ obter: st.obter, substituir: st.substituirDaNuvem });

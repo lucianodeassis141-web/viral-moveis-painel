@@ -44,10 +44,10 @@ export const TRILHAS = {
 };
 
 export const FASES = {
-  1: 'Fase 1 · Comercial sem SDR',
-  2: 'Fase 2 · Gestão interna em uso',
-  3: 'Fase 3 · Portal do cliente',
-  4: 'Fase 4 · Escala',
+  1: 'Fase 1 · Sistema de atendimento',
+  2: 'Fase 2 · Ofertas e esteira',
+  3: 'Fase 3 · Sistema do cliente',
+  4: 'Fase 4 · Operação interna e cérebro',
 };
 
 export const SITUACOES_RISCO = {

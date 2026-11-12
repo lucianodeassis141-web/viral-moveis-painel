@@ -201,7 +201,15 @@ function carregar() {
 let estado = carregar();
 const ouvintes = new Set();
 
+let aoSalvarNaNuvem = null;
+export function ligarNuvem(fn) { aoSalvarNaNuvem = fn; }
+
 function salvar() {
+  salvarLocal();
+  if (aoSalvarNaNuvem) aoSalvarNaNuvem(estado);
+}
+
+function salvarLocal() {
   try {
     localStorage.setItem(CHAVE_ARMAZENAMENTO, JSON.stringify(estado));
   } catch (e) {
@@ -211,6 +219,13 @@ function salvar() {
 
 function notificar() {
   salvar();
+  ouvintes.forEach((fn) => fn(estado));
+}
+
+/** Estado que chegou do banco: substitui o local e redesenha, sem mandar de volta. */
+export function substituirDaNuvem(bruto) {
+  estado = mesclar(bruto);
+  salvarLocal();
   ouvintes.forEach((fn) => fn(estado));
 }
 
