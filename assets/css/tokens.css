@@ -1,0 +1,42 @@
+/* ==========================================================================
+   VIRAL MOVEIS - tokens de identidade visual do painel
+   Unico arquivo de marca: trocar os valores daqui muda o painel inteiro.
+
+   Origem: Manual de SDR da Viral Moveis (cores exatas) e o logo do perfil.
+   Laranja #FF5A1F de destaque, quase preto #14151B de fundo, ambar #FFB020
+   como selo secundario, Poppins em todos os pesos, titulos em caixa alta
+   ExtraBold. Os nomes das variaveis ficaram os do motor original (vermelho,
+   preto...) para nenhum outro CSS precisar mudar.
+   ========================================================================== */
+
+:root {
+  /* ---------- a marca ---------- */
+  --preto:          #14151B;   /* fundo predominante */
+  --vermelho:       #FF5A1F;   /* laranja Viral: destaque, fio, barra, numero */
+  --vermelho-claro: #FF7A47;   /* hover e realce sobre fundo escuro */
+  --vermelho-fundo: #2A1309;   /* faixa escura alaranjada */
+  --branco:         #FFFFFF;
+  --cinza:          #ECEDF2;   /* texto secundario */
+
+  /* ---------- escuros de apoio, derivados do fundo ---------- */
+  --preto-2:        #181920;
+  --grafite:        #1C1D25;   /* superficie elevada */
+  --grafite-2:      #21232C;   /* cartao */
+  --grafite-3:      #282A34;   /* cartao sobre cartao */
+
+  /* ---------- texto sobre fundo escuro ---------- */
+  --on-dark:      #FFFFFF;
+  --on-dark-2:    #C9CBD4;
+  --on-dark-dim:  #8D90A0;
+
+  /* ---------- tipografia ---------- */
+  --font-display: 'Poppins', 'Segoe UI', Arial, sans-serif;
+  --font-body:    'Poppins', 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  --display-italico: normal;
+  --display-espaco:  -0.01em;
+
+  /* ---------- gradientes e tracos ---------- */
+  --grad-vermelho: linear-gradient(135deg, #FF5A1F 0%, #E3462A 100%);
+  --linha:         rgba(255, 90, 31, .38);
+  --linha-suave:   rgba(255, 90, 31, .18);
+}
