@@ -45,7 +45,7 @@ function estadoNovo() {
 function semear(t) {
   return {
     ...t,
-    status: 'pendente',
+    status: t.statusInicial || 'pendente',
     dataInicioReal: '',
     dataConclusao: '',
     prazo: '',            // vazio = usa o dia planejado do cronograma
