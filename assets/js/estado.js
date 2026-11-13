@@ -21,7 +21,7 @@ function estadoNovo() {
     projeto: { ...PROJETO_PADRAO },
     tarefas: TAREFAS.map(semear),
     materiais: MATERIAIS.map((m) => ({
-      ...m, status: m.statusInicial || 'pendente', observacao: '', atualizadoEm: '',
+      ...m, status: m.statusInicial || 'pendente', observacao: m.observacao || '', atualizadoEm: '',
     })),
     marcos: MARCOS.map((p) => ({ ...p, concluido: false })),
     riscos: RISCOS.map((r) => ({ ...r, situacao: 'vigiando', observacao: '' })),
@@ -133,7 +133,7 @@ function mesclar(salvo) {
   const materiais = base.materiais.map((padrao) => {
     const s = matPorId.get(padrao.id);
     return s
-      ? { ...padrao, status: s.status || padrao.status, observacao: s.observacao || '', atualizadoEm: s.atualizadoEm || '' }
+      ? { ...padrao, status: s.status || padrao.status, observacao: s.observacao || padrao.observacao || '', atualizadoEm: s.atualizadoEm || '' }
       : padrao;
   });
 
